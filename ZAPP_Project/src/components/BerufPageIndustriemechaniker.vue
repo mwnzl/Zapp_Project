@@ -3,8 +3,17 @@
     <NavBar />
     <div class="page">
       <main>
-        <h2>Industriemechaniker</h2>
-        <p>Informationen über den Beruf Industriemechaniker.</p>
+        <div class="content">
+          <div class="text">
+            <h2>Industriemechaniker</h2>
+            <p>
+              Industriemechaniker sind Fachkräfte, die in der Herstellung, Instandhaltung und Überwachung von technischen Systemen tätig sind. Sie arbeiten in der Regel in der Industrie und sind für die Montage, Wartung und Reparatur von Maschinen und Anlagen verantwortlich. Zu ihren Aufgaben gehört es, technische Zeichnungen zu lesen, Bauteile zu fertigen und Maschinen zu programmieren. Industriemechaniker tragen wesentlich dazu bei, dass Produktionsprozesse reibungslos ablaufen und die Qualität der Produkte gewährleistet ist.
+            </p>
+          </div>
+          <div class="image">
+            <img src="@/assets/Maschine-1.jpeg" alt="Maschine" />
+          </div>
+        </div>
       </main>
     </div>
   </div>
@@ -25,6 +34,33 @@ import NavBar from "@/components/NavBar.vue";
   justify-content: space-between;
   position: relative;
   padding-top: 60px; /* Prevent NavBar overlap */
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.text {
+  flex: 1;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 h2 {

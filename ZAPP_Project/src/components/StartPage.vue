@@ -123,9 +123,9 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
-  padding: 12px 24px; /* Adjusted to match other buttons */
-  background-color: white; /* Match other buttons */
-  color: #007833; /* Match other buttons */
+  padding: 10px 20px;
+  background-color: #007833;
+  color: white;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
@@ -135,17 +135,6 @@ p {
 
 .image-wrapper:hover .hover-button {
   display: block;
-}
-
-.hover-button:hover {
-  background-color: #f0f0f0; /* Match hover effect of other buttons */
-  transform: translate(-50%, -52%); /* Slight lift effect */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Match hover shadow of other buttons */
-}
-
-.hover-button:active {
-  transform: translate(-50%, -50%); /* Reset lift effect */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match active shadow of other buttons */
 }
 
 .logo-bottom-right {

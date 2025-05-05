@@ -10,6 +10,8 @@ import BerufPageZerspannungsmechaniker from '@/components/BerufPageZerspannungsm
 import BerufPageWerkzeugmechaniker from '@/components/BerufPageWerkzeugmechaniker.vue';
 import BerufPageWerkstoffprüfer from '@/components/BerufPageWerkstoffprüfer.vue';
 import Maschine1 from '@/components/Maschine-1.vue';
+import Fraesen1 from '@/components/Fraesen-1.vue';
+import Labor1 from '@/components/Labor-1.vue';
 
 const routes = [
   { path: '/', component: StartPage },
@@ -23,6 +25,8 @@ const routes = [
   { path: '/beruf/werkzeugmechaniker', component: BerufPageWerkzeugmechaniker },
   { path: '/beruf/werkstoffprüfer', component: BerufPageWerkstoffprüfer },
   { path: '/maschine-1', component: Maschine1 },
+  { path: '/fraesen-1', component: Fraesen1 },
+  { path: '/labor-1', component: Labor1 },
 ];
 
 const router = createRouter({
