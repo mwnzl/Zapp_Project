@@ -1,0 +1,12 @@
+com\zapp\berufapp\controller\UserController.class
+com\zapp\berufapp\entity\User.class
+com\zapp\berufapp\entity\Question.class
+com\zapp\berufapp\repository\QuestionRepository.class
+com\zapp\berufapp\entity\Answer.class
+com\zapp\berufapp\controller\QuestionController.class
+com\zapp\berufapp\service\UserService.class
+com\zapp\berufapp\controller\QuizController.class
+com\zapp\berufapp\repository\UserRepository.class
+com\zapp\berufapp\BerufappApplication.class
+com\zapp\berufapp\service\QuestionService.class
+com\zapp\berufapp\repository\AnswerRepository.class

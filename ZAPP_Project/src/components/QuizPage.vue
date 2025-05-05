@@ -1,20 +1,27 @@
 <template>
-  <div class="page">
-    <header class="zapp-header">
-      <img src="@/assets/zapp-logo.jpeg" alt="ZAPP Logo" class="logo" />
-    </header>
+  <div id="app">
+    <NavBar />
+    <div class="page">
+      <header class="zapp-header">
+        <img src="@/assets/zapp-logo.jpeg" alt="ZAPP Logo" class="logo" />
+      </header>
 
-    <main>
-      <h2>Quiz starten</h2>
-      <p>Hier kommen deine Fragen rein.</p>
-      <!-- Beispielhafte Frage -->
-      <button class="zapp-button">Antwort 1</button>
-      <button class="zapp-button">Antwort 2</button>
-      <!-- Button zu den Ergebnissen -->
-      <router-link to="/ergebnis" class="zapp-button">Hier zu deinen Ergebnissen</router-link>
-    </main>
+      <main>
+        <h2>Quiz starten</h2>
+        <p>Hier kommen deine Fragen rein.</p>
+        <!-- Beispielhafte Frage -->
+        <button class="zapp-button">Antwort 1</button>
+        <button class="zapp-button">Antwort 2</button>
+        <!-- Button zu den Ergebnissen -->
+        <router-link to="/ergebnis" class="zapp-button">Hier zu deinen Ergebnissen</router-link>
+      </main>
+    </div>
   </div>
 </template>
+
+<script setup>
+import NavBar from "@/components/NavBar.vue";
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap');
@@ -24,6 +31,11 @@
   background-color: #f9f9f9;
   text-align: center;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 60px; /* Prevent NavBar overlap */
 }
 
 .zapp-header {
