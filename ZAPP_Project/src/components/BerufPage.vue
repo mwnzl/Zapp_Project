@@ -11,6 +11,9 @@
               </transition>
               <router-link v-if="currentImageIndex === 0" to="/fraesen-1" class="hover-button">Mehr erfahren</router-link>
               <router-link v-if="currentImageIndex === 1" to="/labor-1" class="hover-button">Mehr erfahren</router-link>
+              <router-link v-if="currentImageIndex === 2" to="/entwicklung" class="hover-button">Mehr erfahren</router-link>
+              <router-link v-if="currentImageIndex === 3" to="/gabelstapler" class="hover-button">Mehr erfahren</router-link>
+              <router-link v-if="currentImageIndex === 4" to="/greifarm" class="hover-button">Mehr erfahren</router-link>
             </div>
             <button class="arrow-button" @click="nextImage">&#8594;</button>
           </div>
@@ -38,7 +41,7 @@
                 Werkzeugmechaniker
                 <span class="tooltip">Werkzeugmechaniker: Forme die Werkzeuge, die die Industrie antreiben!</span>
               </router-link>
-              <router-link to="/beruf/werkstoffprüfer" class="zapp-button">
+              <router-link to="/beruf/werkstoffpruefer" class="zapp-button">
                 Werkstoffprüfer
                 <span class="tooltip">Werkstoffprüfer: Garant für Qualität – Teste Materialien auf Herz und Nieren!</span>
               </router-link>
@@ -57,9 +60,20 @@ import NavBar from "@/components/NavBar.vue";
 
 const images = [
   new URL("@/assets/Fraesen-1.jpg", import.meta.url).href,
-  new URL("@/assets/Labor-1.jpg", import.meta.url).href
+  new URL("@/assets/Labor-1.jpg", import.meta.url).href,
+  new URL("@/assets/Entwicklung.jpg", import.meta.url).href,
+  new URL("@/assets/Gabelstapler.JPG", import.meta.url).href,
+  new URL("@/assets/Greifarm.JPG", import.meta.url).href
 ];
-const imageAlts = ["Fräsen", "Labor"];
+
+const imageAlts = [
+  "Fräsen",
+  "Labor",
+  "Entwicklung",
+  "Gabelstapler",
+  "Greifarm"
+];
+
 const currentImageIndex = ref(0);
 
 function nextImage() {
@@ -139,11 +153,14 @@ main {
   display: inline-block;
 }
 
+/* Added fixed dimensions for images to ensure consistent size */
 .photo {
-  max-width: 100%;
+  width: 500px; /* Fixed width for all images */
+  height: 400px; /* Fixed height for all images */
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
+  object-fit: cover; /* Ensures the image covers its container proportionally */
 }
 
 .image-wrapper:hover .photo {

@@ -7,13 +7,13 @@
         <div class="result-container">
           <div class="result-left">
             <h3>Beruf mit der meisten Zustimmung</h3>
-            <p>{{ topMatch }} ({{ topMatchPoints }} Punkte)</p>
-            <router-link :to="topMatchRoute" class="zapp-button">Mehr über {{ topMatch }} erfahren</router-link>
+            <p>{{ topMatch }} ({{ topMatchPercentage }}%)</p>
+            <router-link :to="`/beruf/${topMatch.toLowerCase().replace(/\s+/g, '')}`" class="zapp-button">Mehr über {{ topMatch }} erfahren</router-link>
           </div>
           <div class="result-right">
             <h3>Beruf mit der zweitmeisten Zustimmung</h3>
-            <p>{{ secondMatch }} ({{ secondMatchPoints }} Punkte)</p>
-            <router-link :to="secondMatchRoute" class="zapp-button">Mehr über {{ secondMatch }} erfahren</router-link>
+            <p>{{ secondMatch }} ({{ secondMatchPercentage }}%)</p>
+            <router-link :to="`/beruf/${secondMatch.toLowerCase().replace(/\s+/g, '')}`" class="zapp-button">Mehr über {{ secondMatch }} erfahren</router-link>
           </div>
         </div>
         <p>Das klingt garnicht nach dir? Wie wäre es mit anderen Berufen:</p>
@@ -26,16 +26,34 @@
 
 <script setup>
 import NavBar from "@/components/NavBar.vue";
+import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
 
-// Mock data for demonstration purposes
-const topMatch = "Industriemechaniker";
-const topMatchPoints = 85;
-const secondMatch = "Elektroniker";
-const secondMatchPoints = 75;
+const route = useRoute();
+const topMatch = ref("");
+const topMatchPoints = ref(0);
+const topMatchPercentage = ref(0);
+const secondMatch = ref("");
+const secondMatchPoints = ref(0);
+const secondMatchPercentage = ref(0);
 
-// Dynamically determine the routes based on the matches
-const topMatchRoute = `/beruf/${topMatch.toLowerCase()}`;
-const secondMatchRoute = `/beruf/${secondMatch.toLowerCase()}`;
+onMounted(() => {
+  const punkte = JSON.parse(route.query.punkte || "{}");
+  const totalPoints = Object.values(punkte).reduce((sum, value) => sum + value, 0);
+  const sortedBerufe = Object.entries(punkte).sort(([, a], [, b]) => b - a);
+
+  if (sortedBerufe.length > 0) {
+    topMatch.value = sortedBerufe[0][0];
+    topMatchPoints.value = sortedBerufe[0][1];
+    topMatchPercentage.value = ((sortedBerufe[0][1] / totalPoints) * 100).toFixed(2);
+  }
+
+  if (sortedBerufe.length > 1) {
+    secondMatch.value = sortedBerufe[1][0];
+    secondMatchPoints.value = sortedBerufe[1][1];
+    secondMatchPercentage.value = ((sortedBerufe[1][1] / totalPoints) * 100).toFixed(2);
+  }
+});
 </script>
 
 <style scoped>

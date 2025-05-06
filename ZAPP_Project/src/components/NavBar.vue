@@ -3,7 +3,7 @@
       <div class="navbar">
         <!-- Logo links -->
         <div class="logo">
-          <span>ZAPP</span>
+          <router-link to="/">ZAPP</router-link>
         </div>
   
         <!-- Zentrale Navigation -->
@@ -21,7 +21,9 @@
         <div class="right-icons">
           <i class="fas fa-lock"></i>
           <i class="fas fa-calculator"></i>
-          <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/zappzubi" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
           <i class="fab fa-linkedin-in"></i>
           <span class="lang-select">DE ▾</span>
         </div>

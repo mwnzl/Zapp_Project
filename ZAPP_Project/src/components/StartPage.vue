@@ -19,9 +19,16 @@
           </section>
 
           <div class="image-section">
-            <div class="image-wrapper">
-              <img src="@/assets/Maschine-1.jpeg" alt="Maschine" class="photo" />
-              <router-link to="/maschine-1" class="hover-button">Mehr erfahren</router-link>
+            <div class="image-carousel">
+              <div class="image-wrapper">
+                <transition name="fade">
+                  <img :src="images[currentImageIndex]" :alt="imageAlts[currentImageIndex]" class="photo" key="currentImageIndex" />
+                </transition>
+                <router-link v-if="currentImageIndex === 0" to="/halle18-luft" class="hover-button">Mehr erfahren</router-link>
+                <router-link v-if="currentImageIndex === 1" to="/tauchzuege" class="hover-button">Mehr erfahren</router-link>
+                <router-link v-if="currentImageIndex === 2" to="/maschine-1" class="hover-button">Mehr erfahren</router-link>
+              </div>
+              <button class="arrow-button" @click="nextImage">&#8594;</button>
             </div>
           </div>
 
@@ -37,6 +44,25 @@
 
 <script setup>
 import NavBar from "@/components/NavBar.vue";
+import { ref } from "vue";
+
+const images = [
+  new URL("@/assets/Halle18-Luft.jpg", import.meta.url).href,
+  new URL("@/assets/Tauchzuege.jpg", import.meta.url).href,
+  new URL("@/assets/Maschine-1.jpeg", import.meta.url).href
+];
+
+const imageAlts = [
+  "Halle 18 Luft",
+  "Tauchzüge",
+  "Maschine 1"
+];
+
+const currentImageIndex = ref(0);
+
+function nextImage() {
+  currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
+}
 </script>
 
 <style scoped>
@@ -73,10 +99,11 @@ p {
   margin-top: 20px;
 }
 
+/* Updated styles to match image height with text-section height */
 .content-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch; /* Ensures both sections have the same height */
   flex-grow: 1;
   padding: 20px;
   position: relative;
@@ -98,7 +125,12 @@ p {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch; /* Matches the height of the text-section */
+}
+
+.image-carousel {
+  position: relative; /* Ensures the arrow button is positioned relative to this container */
+  width: 100%;
 }
 
 .image-wrapper {
@@ -106,11 +138,15 @@ p {
   display: inline-block;
 }
 
+/* Updated .photo class for consistent aspect ratio */
 .photo {
-  max-width: 100%;
+  width: 100%;
+  height: 100%; /* Ensures the image takes up the full height of its container */
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
+  object-fit: cover; /* Ensures the image covers its container proportionally */
+  aspect-ratio: 16 / 9; /* Ensures consistent aspect ratio for all images */
 }
 
 .image-wrapper:hover .photo {
@@ -137,9 +173,31 @@ p {
   display: block;
 }
 
+/* Updated styles to fix arrow button position */
+.arrow-button {
+  position: absolute;
+  top: 50%; /* Vertically centers the button */
+  right: 10px; /* Fixed distance from the right edge */
+  transform: translateY(-50%); /* Ensures perfect vertical centering */
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  z-index: 10; /* Ensures the button stays on top */
+}
+
+.arrow-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Adjusted the position of the logo to move it slightly upwards */
 .logo-bottom-right {
   position: absolute;
-  bottom: 20px;
+  bottom: 60px; /* Increased the bottom margin to move the logo upwards */
   right: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
