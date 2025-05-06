@@ -245,4 +245,20 @@ main {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .beruf-page {
+    padding: 10px;
+  }
+
+  .beruf-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .beruf-item {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
 </style>

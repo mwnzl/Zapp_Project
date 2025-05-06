@@ -84,4 +84,30 @@
     cursor: pointer;
     font-weight: 500;
   }
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 5px 10px;
+    }
+  
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+    }
+  
+    .menu a {
+      font-size: 12px;
+      padding: 3px 5px;
+    }
+  
+    .right-icons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 5px;
+    }
+  }
   </style>

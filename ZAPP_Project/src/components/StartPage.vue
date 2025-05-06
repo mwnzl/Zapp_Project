@@ -234,4 +234,50 @@ p {
   transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 768px) {
+  .start-page {
+    padding: 10px;
+  }
+
+  .start-content {
+    text-align: center;
+  }
+
+  .start-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .text-section {
+    width: 90%;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .image-section {
+    width: 90%;
+  }
+
+  .photo {
+    aspect-ratio: auto; /* Allow images to scale naturally */
+    max-height: 300px; /* Limit image height for smaller screens */
+  }
+
+  .arrow-button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .zapp-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
 </style>

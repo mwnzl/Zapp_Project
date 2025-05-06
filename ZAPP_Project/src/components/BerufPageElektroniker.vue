@@ -163,4 +163,47 @@ h2 {
   justify-content: space-between;
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .page {
+    padding-top: 50px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .image {
+    float: none;
+    margin: 0 auto 20px;
+  }
+
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .zapp-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .inline-image {
+    max-width: 100%;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 </style>
