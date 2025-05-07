@@ -67,7 +67,7 @@ export default {
     async ladeDaten() {
       try {
         const response = await fetch(
-            'data/questions.json'
+            '/questions'
         );
         if (!response.ok) {
           throw new Error('Fehler beim Abrufen der Daten vom Backend');
