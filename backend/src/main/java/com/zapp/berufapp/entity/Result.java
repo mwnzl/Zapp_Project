@@ -19,5 +19,29 @@ public class Result {
     @Column(name = "score")
     private Map<String, Integer> professionScores;
 
-    // Геттеры и сеттеры
+    public Result() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Map<String, Integer> getProfessionScores() {
+        return professionScores;
+    }
+
+    public void setProfessionScores(Map<String, Integer> professionScores) {
+        this.professionScores = professionScores;
+    }
 }
