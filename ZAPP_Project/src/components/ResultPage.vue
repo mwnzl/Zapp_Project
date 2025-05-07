@@ -29,7 +29,6 @@ import NavBar from "@/components/NavBar.vue";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import { useResizeWatcher } from "@/composables/useResizeWatcher";
-import axios from 'axios';
 
 const route = useRoute();
 const topMatch = ref("");
@@ -39,22 +38,40 @@ const secondMatch = ref("");
 const secondMatchPoints = ref(0);
 const secondMatchPercentage = ref(0);
 
-useResizeWatcher();
+onMounted(() => {
+  const punkte = JSON.parse(route.query.punkte || "{}");
+  const totalPoints = Object.values(punkte).reduce((sum, value) => sum + value, 0);
+  const sortedBerufe = Object.entries(punkte).sort(([, a], [, b]) => b - a);
 
-const sendAnswerToBackend = async (answer) => {
+  if (sortedBerufe.length > 0) {
+    topMatch.value = sortedBerufe[0][0];
+    topMatchPoints.value = sortedBerufe[0][1];
+    topMatchPercentage.value = ((sortedBerufe[0][1] / totalPoints) * 100).toFixed(2);
+  }
+
+  if (sortedBerufe.length > 1) {
+    secondMatch.value = sortedBerufe[1][0];
+    secondMatchPoints.value = sortedBerufe[1][1];
+    secondMatchPercentage.value = ((sortedBerufe[1][1] / totalPoints) * 100).toFixed(2);
+  }
+});
+
+const sendAnswersToBackend = async (punkte) => {
   try {
-    const response = await axios.post('localhost:8080/api/result', {
-      answer: answer
+    const response = await axios.post("localhost:8080/api/result", {
+      punkte: punkte,
     });
-    console.log('Antwort erfolgreich gesendet:', response.data);
+    console.log("Antworten erfolgreich gesendet:", response.data);
   } catch (error) {
-    console.error('Fehler beim Senden der Antwort:', error);
+    console.error("Fehler beim Senden der Antworten:", error);
   }
 };
 
-const handleAnswerSelection = (selectedAnswer) => {
-  sendAnswerToBackend(selectedAnswer);
-};
+sendAnswersToBackend(punkte);
+
+
+
+useResizeWatcher();
 </script>
 
 <style scoped>
