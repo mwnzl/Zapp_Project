@@ -1,17 +1,40 @@
-# Use root/root as user/password credentials
-version: '3.1'
+version: '3.8'
 
 services:
-
   db:
-    image: mysql
-    restart: always
+    image: mariadb:11
+    container_name: zapp_beruf_db
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: berufdb
-      MYSQL_USER: berufuser
-      MYSQL_PASSWORD: berufpass
-
-    # (this is just an example, not intended to be a production configuration)
+      MARIADB_DATABASE: zapp_berufdb
+      MARIADB_USER: root
+      MARIADB_PASSWORD: root
+      MARIADB_ROOT_PASSWORD: root
     ports:
-      - 3306:3306
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: .
+    container_name: springboot-app
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://db:3306/zapp_berufdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+volumes:
+  mariadb_data:
+
+networks:
+  app-network:
