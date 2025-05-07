@@ -38,11 +38,15 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
+import { useResizeWatcher } from "@/composables/useResizeWatcher";
 
 export default {
   name: 'QuizPageZerspannungsmechaniker',
   components: {
     NavBar
+  },
+  setup() {
+    useResizeWatcher();
   },
   data() {
     return {

@@ -57,6 +57,7 @@
 <script setup>
 import { ref } from 'vue';
 import NavBar from "@/components/NavBar.vue";
+import { useResizeWatcher } from "@/composables/useResizeWatcher";
 
 const images = [
   new URL("@/assets/Fraesen-1.jpg", import.meta.url).href,
@@ -79,6 +80,8 @@ const currentImageIndex = ref(0);
 function nextImage() {
   currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
 }
+
+useResizeWatcher();
 </script>
 
 <style scoped>
@@ -259,6 +262,56 @@ main {
   .beruf-item {
     font-size: 14px;
     padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 10px;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .image-carousel {
+    width: 100%;
+  }
+
+  .photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .button-section {
+    width: 100%;
+    align-items: center;
+  }
+
+  .button-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .zapp-button {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .tooltip {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .back-button {
+    margin-top: 15px;
   }
 }
 </style>

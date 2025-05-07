@@ -32,6 +32,8 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useResizeWatcher } from "@/composables/useResizeWatcher";
 
 export default {
   components: {
@@ -102,6 +104,10 @@ export default {
         alert("Bitte eine Antwort auswählen!");
       }
     }
+  },
+  setup() {
+    const { screenWidth } = useResizeWatcher();
+    return { screenWidth };
   }
 };
 </script>

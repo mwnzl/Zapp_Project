@@ -38,6 +38,7 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
+import { useResizeWatcher } from "@/composables/useResizeWatcher";
 
 export default {
   name: 'QuizPageVerfahrenstechnologe',
@@ -170,6 +171,9 @@ export default {
       this.userAnswers = [];
       this.currentQuestionIndex++;
     }
+  },
+  mounted() {
+    useResizeWatcher();
   }
 };
 </script>

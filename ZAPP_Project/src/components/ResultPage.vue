@@ -28,6 +28,7 @@
 import NavBar from "@/components/NavBar.vue";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import { useResizeWatcher } from "@/composables/useResizeWatcher";
 
 const route = useRoute();
 const topMatch = ref("");
@@ -54,6 +55,8 @@ onMounted(() => {
     secondMatchPercentage.value = ((sortedBerufe[1][1] / totalPoints) * 100).toFixed(2);
   }
 });
+
+useResizeWatcher();
 </script>
 
 <style scoped>
@@ -113,5 +116,34 @@ onMounted(() => {
 .zapp-button:active {
   transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 10px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .result-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .result-left, .result-right {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .zapp-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
 }
 </style>
