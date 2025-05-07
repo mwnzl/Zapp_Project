@@ -49,7 +49,7 @@ export default {
         Industriemechaniker: 0,
         Elektroniker: 0,
         Verfahrenstechnologe: 0,
-        Werkstoffprüfer: 0,
+        Werkstoffpruefer: 0,
         Werkzeugmechaniker: 0,
         Zerspannungsmechaniker: 0
       }

@@ -28,9 +28,9 @@
   {
     "text": "Hast du schon Erfahrungen im Labor oder bei Experimenten gemacht? (z.B. Werkstoffprüfung, Chemieunterricht)",
     "options": [
-      { "text": "Ja, und ich fand es spannend", "points": { "Werkstoffprüfer": 3 } },
-      { "text": "Ja, war in Ordnung", "points": { "Werkstoffprüfer": 2 } },
-      { "text": "Nein, aber ich bin interessiert", "points": { "Werkstoffprüfer": 1 } }
+      { "text": "Ja, und ich fand es spannend", "points": { "Werkstoffpruefer": 3 } },
+      { "text": "Ja, war in Ordnung", "points": { "Werkstoffpruefer": 2 } },
+      { "text": "Nein, aber ich bin interessiert", "points": { "Werkstoffpruefer": 1 } }
     ]
   },
   {
@@ -53,7 +53,7 @@
     "text": "In einem Praktikum oder Hobby: Was hat dir am meisten gefallen?",
     "options": [
       { "text": "Reparieren", "points": { "Industriemechaniker": 3, "Elektroniker": 3 } },
-      { "text": "Überprüfen und testen", "points": { "Werkstoffprüfer": 3 } },
+      { "text": "Überprüfen und testen", "points": { "Werkstoffpruefer": 3 } },
       { "text": "Genaues Arbeiten an Maschinen", "points": { "Zerspannungsmechaniker": 3, "Werkzeugmechaniker": 3 } },
       { "text": "Abläufe steuern", "points": { "Verfahrenstechnologe": 3 } }
     ]
@@ -69,9 +69,9 @@
   {
     "text": "Hast du schon mal bei einer Qualitätskontrolle oder ähnlichem mitgemacht? (z.B. Sachen kontrolliert, ob alles richtig ist)",
     "options": [
-      { "text": "Ja, und ich fand das interessant", "points": { "Werkstoffprüfer": 3 } },
+      { "text": "Ja, und ich fand das interessant", "points": { "Werkstoffpruefer": 3 } },
       { "text": "Ja, aber eher langweilig", "points": {} },
-      { "text": "Nein, aber ich finde das spannend", "points": { "Werkstoffprüfer": 2 } }
+      { "text": "Nein, aber ich finde das spannend", "points": { "Werkstoffpruefer": 2 } }
     ]
   },
   {
@@ -79,7 +79,7 @@
     "options": [
       { "text": "Wenn ich Dinge repariere oder zusammenbaue", "points": { "Industriemechaniker": 3, "Werkzeugmechaniker": 3 } },
       { "text": "Wenn ich technische Geräte anschaue oder repariere", "points": { "Elektroniker": 3 } },
-      { "text": "Wenn ich sehr genau messe oder prüfe", "points": { "Werkstoffprüfer": 3, "Zerspannungsmechaniker": 3 } },
+      { "text": "Wenn ich sehr genau messe oder prüfe", "points": { "Werkstoffpruefer": 3, "Zerspannungsmechaniker": 3 } },
       { "text": "Wenn ich Abläufe überwache", "points": { "Verfahrenstechnologe": 3 } }
     ]
   }
