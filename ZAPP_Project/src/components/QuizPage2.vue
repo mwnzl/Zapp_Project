@@ -41,7 +41,7 @@ export default {
   },
   data() {
     return {
-      fragen: null, // Wird mit den Backend-Fragen gefüllt
+      fragen: null, 
       currentStep: 0,
       selected: null,
       fehlermeldung: '',
@@ -81,7 +81,6 @@ export default {
     },
     naechsteFrage() {
       if (this.selected !== null) {
-        // Punkte für den ausgewählten Beruf hinzufügen
         const selectedOption = this.aktuelleFrage.options.find(option => option.text === this.selected);
         if (selectedOption && selectedOption.points) {
           for (const [beruf, punkte] of Object.entries(selectedOption.points)) {
@@ -89,7 +88,7 @@ export default {
           }
         }
 
-        this.selected = null; // Zurücksetzen für die nächste Frage
+        this.selected = null; 
         if (this.currentStep < this.fragen.length - 1) {
           this.currentStep++;
         } else {
@@ -98,7 +97,7 @@ export default {
             query: {
               punkte: JSON.stringify(this.berufPunkte)
             }
-          }); // Navigation am Ende
+          }); 
         }
       } else {
         alert("Bitte eine Antwort auswählen!");
@@ -115,7 +114,7 @@ export default {
 <style scoped>
 .quiz-page {
   font-family: 'Roboto', sans-serif;
-  background: #f0f0f0; /* Geänderter Hintergrund zu einem hellgrauen Farbton */
+  background: #f0f0f0; 
   text-align: center;
   min-height: 100vh;
   display: flex;

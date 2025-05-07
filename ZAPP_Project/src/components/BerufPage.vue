@@ -92,8 +92,8 @@ useResizeWatcher();
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  justify-content: center; 
+  align-items: center; 
   padding: 20px;
 }
 
@@ -103,13 +103,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* Add spacing between elements */
+  gap: 20px; 
 }
 
 .content-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align items to the top */
+  align-items: flex-start;
   gap: 40px;
   width: 100%;
 }
@@ -118,7 +118,7 @@ main {
   position: relative;
   display: flex;
   align-items: center;
-  width: 50%; /* Restrict image carousel to half the screen */
+  width: 50%; 
 }
 
 .arrow-button {
@@ -140,15 +140,15 @@ main {
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
-  width: 50%; /* Restrict button section to half the screen */
+  width: 50%; 
 }
 
 .button-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px; /* Adjusted spacing */
+  gap: 15px; 
   width: 100%;
-  align-items: start; /* Ensure buttons align properly when shifted */
+  align-items: start; 
 }
 
 .image-wrapper {
@@ -156,14 +156,13 @@ main {
   display: inline-block;
 }
 
-/* Added fixed dimensions for images to ensure consistent size */
 .photo {
-  width: 500px; /* Fixed width for all images */
-  height: 400px; /* Fixed height for all images */
+  width: 500px;
+  height: 400px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
-  object-fit: cover; /* Ensures the image covers its container proportionally */
+  object-fit: cover;
 }
 
 .image-wrapper:hover .photo {
@@ -192,8 +191,8 @@ main {
 
 .zapp-button {
   display: inline-block;
-  padding: 10px 20px; /* Reduced size */
-  font-size: 14px; /* Smaller font size */
+  padding: 10px 20px; 
+  font-size: 14px; 
   font-weight: bold;
   background-color: #007833;
   color: white;
@@ -202,37 +201,37 @@ main {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-align: center;
-  position: relative; /* For tooltip positioning */
+  position: relative; 
 }
 
 .zapp-button:hover {
   background-color: #005d27;
-  transform: translateY(-2px); /* Slight lift effect */
+  transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  margin-bottom: 40px; /* Push other buttons down */
+  margin-bottom: 40px; /* Bei drüber Hovern andere Buttons nach unten drücken*/
 }
 
 .zapp-button:active {
-  transform: translateY(0); /* Reset lift effect */
+  transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .zapp-button:hover .tooltip {
-  display: block; /* Show tooltip on hover */
+  display: block;
 }
 
 .tooltip {
-  display: none; /* Hidden by default */
+  display: none;
   position: absolute;
-  bottom: -30px; /* Position below the button */
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white; /* White background for tooltip */
-  color: black; /* Black text for tooltip */
+  background-color: white; 
+  color: black; 
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 12px;
-  white-space: nowrap; /* Remove text wrapping */
+  white-space: nowrap; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -248,6 +247,8 @@ main {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
+
+/* Ab hier für Handy */
 
 @media (max-width: 768px) {
   .beruf-page {

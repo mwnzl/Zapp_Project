@@ -33,7 +33,7 @@
   
   <style scoped>
   .navbar-wrapper {
-    position: fixed; /* Ensure the NavBar stays fixed at the top */
+    position: fixed; /*Stellt sicher, dass die Navbar immer oben bleibt*/
     top: 0;
     left: 0;
     width: 100%;
@@ -41,7 +41,7 @@
     padding: 10px 20px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    z-index: 1000; /* Ensure it stays above other elements */
+    z-index: 1000; /* Stellt sicher, dass NavBar über alle anderen Inhale liegt */
   }
   
   .navbar {

@@ -82,21 +82,21 @@ function adjustLayout(width) {
     root.style.setProperty("--text-width", "90%");
     root.style.setProperty("--image-width", "90%");
     if (logoElement) {
-      logoElement.style.display = "none"; // Logo ausblenden
+      logoElement.style.display = "none"; 
     }
   } else {
     root.style.setProperty("--content-gap", "20px");
     root.style.setProperty("--text-width", "50%");
     root.style.setProperty("--image-width", "50%");
     if (logoElement) {
-      logoElement.style.display = "block"; // Logo einblenden
+      logoElement.style.display = "block"; 
     }
   }
 }
 
 onMounted(() => {
   window.addEventListener("resize", handleResize);
-  handleResize(); // Initial call to set layout based on current screen size
+  handleResize(); 
 });
 
 onBeforeUnmount(() => {
@@ -117,7 +117,7 @@ onBeforeUnmount(() => {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  padding-top: 60px; /* Prevent NavBar overlap */
+  padding-top: 60px;
 }
 
 h2 {
@@ -138,15 +138,14 @@ p {
   margin-top: 20px;
 }
 
-/* Updated styles to match image height with text-section height */
 .content-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* Ensures both sections have the same height */
+  align-items: stretch; 
   flex-grow: 1;
   padding: 20px;
   position: relative;
-  gap: 20px; /* Add spacing between text and image */
+  gap: 20px;
 }
 
 .text-section {
@@ -157,18 +156,18 @@ p {
   color: #333;
   width: 50%;
   text-align: left;
-  margin-top: 0; /* Align text with buttons */
+  margin-top: 0; 
 }
 
 .image-section {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Matches the height of the text-section */
+  align-items: stretch; 
 }
 
 .image-carousel {
-  position: relative; /* Ensures the arrow button is positioned relative to this container */
+  position: relative; 
   width: 100%;
 }
 
@@ -177,15 +176,14 @@ p {
   display: inline-block;
 }
 
-/* Updated .photo class for consistent aspect ratio */
 .photo {
   width: 100%;
-  height: 100%; /* Ensures the image takes up the full height of its container */
+  height: 100%; 
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
-  object-fit: cover; /* Ensures the image covers its container proportionally */
-  aspect-ratio: 16 / 9; /* Ensures consistent aspect ratio for all images */
+  object-fit: cover; 
+  aspect-ratio: 16 / 9;
 }
 
 .image-wrapper:hover .photo {
@@ -212,12 +210,11 @@ p {
   display: block;
 }
 
-/* Updated styles to fix arrow button position */
 .arrow-button {
   position: absolute;
-  top: 50%; /* Vertically centers the button */
-  right: 10px; /* Fixed distance from the right edge */
-  transform: translateY(-50%); /* Ensures perfect vertical centering */
+  top: 50%; 
+  right: 10px; 
+  transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 50%;
@@ -226,17 +223,16 @@ p {
   cursor: pointer;
   font-size: 1.5rem;
   transition: all 0.3s ease;
-  z-index: 10; /* Ensures the button stays on top */
+  z-index: 10; 
 }
 
 .arrow-button:hover {
   background-color: #f0f0f0;
 }
 
-/* Adjusted the position of the logo to move it slightly upwards */
 .logo-bottom-right {
   position: absolute;
-  bottom: 60px; /* Increased the bottom margin to move the logo upwards */
+  bottom: 60px; 
   right: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
@@ -305,8 +301,8 @@ p {
   }
 
   .photo {
-    aspect-ratio: auto; /* Allow images to scale naturally */
-    max-height: 300px; /* Limit image height for smaller screens */
+    aspect-ratio: auto; /* Autoscale vom Bild */
+    max-height: 300px; 
   }
 
   .arrow-button {

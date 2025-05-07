@@ -80,7 +80,7 @@ useResizeWatcher();
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  padding-top: 60px; /* Prevent NavBar overlap */
+  padding-top: 60px;
 }
 
 .content {

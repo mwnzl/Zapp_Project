@@ -10,7 +10,6 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useResizeWatcher } from "@/composables/useResizeWatcher";
 
-// Bildschirmgröße überwachen
 const screenWidth = ref(window.innerWidth);
 
 function handleResize() {
@@ -27,21 +26,21 @@ function adjustLayout(width) {
     root.style.setProperty("--text-width", "90%");
     root.style.setProperty("--image-width", "90%");
     if (logoElement) {
-      logoElement.style.display = "none"; // Logo ausblenden
+      logoElement.style.display = "none"; 
     }
   } else {
     root.style.setProperty("--content-gap", "20px");
     root.style.setProperty("--text-width", "50%");
     root.style.setProperty("--image-width", "50%");
     if (logoElement) {
-      logoElement.style.display = "block"; // Logo einblenden
+      logoElement.style.display = "block";
     }
   }
 }
 
 onMounted(() => {
   window.addEventListener("resize", handleResize);
-  adjustLayout(screenWidth.value); // Initiales Layout anpassen
+  adjustLayout(screenWidth.value); 
 });
 
 onBeforeUnmount(() => {
@@ -61,7 +60,7 @@ useResizeWatcher();
 
 .logo-bottom-right {
   position: absolute;
-  bottom: 20px; /* Adjusted to bring the logo higher */
+  bottom: 20px;
   right: 20px;
   background-color: white;
   padding: 5px;
