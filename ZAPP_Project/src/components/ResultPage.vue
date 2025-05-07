@@ -56,7 +56,7 @@ onMounted(() => {
   }
 });
 
-const sendAnswersToBackend = async (punkte) => {
+/*const sendAnswersToBackend = async (punkte) => {
   try {
     const response = await axios.post("localhost:8080/api/result", {
       punkte: punkte,
@@ -68,6 +68,7 @@ const sendAnswersToBackend = async (punkte) => {
 };
 
 sendAnswersToBackend(punkte);
+*/
 
 
 

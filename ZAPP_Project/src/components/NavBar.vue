@@ -19,12 +19,18 @@
   
         <!-- Icons rechts -->
         <div class="right-icons">
-          <i class="fas fa-lock"></i>
-          <i class="fas fa-calculator"></i>
+          <a href="https://www.zapp.com/kunden-login" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-lock"></i>
+          </a>
+          <a href="https://www.zapp.com/rechner" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-calculator"></i>
+          </a>
           <a href="https://www.instagram.com/zappzubi" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-instagram"></i>
           </a>
-          <i class="fab fa-linkedin-in"></i>
+          <a href="https://www.linkedin.com/company/zapp-precision-metals-gmbh" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+          </a>
           <span class="lang-select">DE ▾</span>
         </div>
       </div>
@@ -78,6 +84,14 @@
     align-items: center;
     gap: 12px;
     font-size: 16px;
+  }
+
+  .right-icons a {
+    text-decoration: none;
+  }
+
+  .right-icons a:focus {
+    outline: none;
   }
   
   .lang-select {

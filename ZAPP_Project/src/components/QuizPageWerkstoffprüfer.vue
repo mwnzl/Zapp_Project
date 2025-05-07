@@ -25,7 +25,7 @@
         <p v-else-if="correctAnswers > 4">Toll!</p>
         <p v-else>Schade!</p>
         <button class="zapp-button" @click="$router.push('/')">Zur Startseite</button>
-        <button class="zapp-button" @click="$router.push('/beruf/werkstoffprüfer')">Zurück zum Werkstoffprüfer</button>
+        <button class="zapp-button" @click="$router.push('/beruf/werkstoffpruefer')">Zurück zum Werkstoffprüfer</button>
       </div>
 
       <div v-if="feedback" class="feedback">
