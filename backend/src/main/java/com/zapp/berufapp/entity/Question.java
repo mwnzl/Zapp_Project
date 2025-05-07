@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "QUESTIONS")
+@Table(name = "questions")
 public class Question {
 
     @Id
@@ -16,31 +16,19 @@ public class Question {
     private String text;
 
     @OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Answer> answers = new ArrayList<>();
+    private List<Option> options = new ArrayList<>();
 
     public Question() {}
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() {return id;}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) {this.id = id;}
 
-    public String getText() {
-        return text;
-    }
+    public String getText() {return text;}
 
-    public void setText(String text) {
-        this.text = text;
-    }
+    public void setText(String text) {this.text = text;}
 
-    public List<Answer> getAnswers() {
-        return answers;
-    }
+    public List<Option> getOptions() {return options;}
 
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
-    }
+    public void setOptions(List<Option> options) {this.options = options;}
 }

@@ -1,10 +1,10 @@
 package com.zapp.berufapp.entity;
-
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "answers")
-public class Answer {
+@Table(name = "options")
+public class Option {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,13 +12,14 @@ public class Answer {
 
     private String text;
 
-    private int points;
-
     @ManyToOne
     @JoinColumn(name = "question_id")
     private Question question;
 
-    public Answer(){}
+    @OneToMany(mappedBy = "option", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Point> points;
+
+    public Option() {}
 
     public Long getId() {return id;}
 
@@ -28,12 +29,12 @@ public class Answer {
 
     public void setText(String text) {this.text = text;}
 
-    public int getPoints() {return points;}
+    //public Question getQuestion() {return question;}
 
-    public void setPoints(int points) {this.points = points;}
+    public void setQuestion(Question question) {this.question = question;}
 
-    public void setQuestion(Question question) {
-        this.question = question;
-    }
+    public List<Point> getPoints() {return points;}
+
+    public void setPoints(List<Point> points) {this.points = points;}
 }
 
