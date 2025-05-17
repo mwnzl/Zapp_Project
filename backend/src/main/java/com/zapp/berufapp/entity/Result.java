@@ -21,27 +21,21 @@ public class Result {
 
     public Result() {}
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() {        return id;    }
+    public void setId(Long id) {        this.id = id;    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getUserId() {        return userId;    }
+    public void setUserId(String userId) {        this.userId = userId;    }
 
-    public String getUserId() {
-        return userId;
-    }
+    public Map<String, Integer> getProfessionScores() {        return professionScores;    }
+    public void setProfessionScores(Map<String, Integer> professionScores) {        this.professionScores = professionScores;    }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public Map<String, Integer> getProfessionScores() {
-        return professionScores;
-    }
-
-    public void setProfessionScores(Map<String, Integer> professionScores) {
-        this.professionScores = professionScores;
+    @Override
+    public String toString() {
+        return "Result{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", professionScores=" + professionScores +
+                '}';
     }
 }

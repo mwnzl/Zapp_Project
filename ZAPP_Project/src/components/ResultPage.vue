@@ -29,6 +29,7 @@ import NavBar from "@/components/NavBar.vue";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import { useResizeWatcher } from "@/composables/useResizeWatcher";
+import axios from 'axios';
 
 const route = useRoute();
 const topMatch = ref("");
@@ -39,7 +40,7 @@ const secondMatchPoints = ref(0);
 const secondMatchPercentage = ref(0);
 
 onMounted(() => {
-  const punkte = JSON.parse(route.query.punkte || "{}");
+  const punkte = JSON.parse(route.query.punkte || '{}');
   const totalPoints = Object.values(punkte).reduce((sum, value) => sum + value, 0);
   const sortedBerufe = Object.entries(punkte).sort(([, a], [, b]) => b - a);
 
@@ -54,23 +55,29 @@ onMounted(() => {
     secondMatchPoints.value = sortedBerufe[1][1];
     secondMatchPercentage.value = ((sortedBerufe[1][1] / totalPoints) * 100).toFixed(2);
   }
+
+  console.log(punkte)
+  sendAnswersToBackend(punkte)
 });
 
-/*const sendAnswersToBackend = async (punkte) => {
+const sendAnswersToBackend = async (punkte) => {
+  const data2send = {
+      'userId': null,
+      'professionScores': punkte
+  }
   try {
-    const response = await axios.post("localhost:8080/api/result", {
-      punkte: punkte,
-    });
-    console.log("Antworten erfolgreich gesendet:", response.data);
+    const response = await axios.post(
+        //"localhost:8080/api" +
+        "/results", data2send);
+    console.log('Antwort erfolgreich gesendet:', response.data);
   } catch (error) {
-    console.error("Fehler beim Senden der Antworten:", error);
+    console.error('Fehler beim Senden der Antwort:', error);
   }
 };
 
-sendAnswersToBackend(punkte);
-*/
-
-
+const handleAnswerSelection = (selectedAnswer) => {
+  sendAnswerToBackend(selectedAnswer);
+};
 
 useResizeWatcher();
 </script>
