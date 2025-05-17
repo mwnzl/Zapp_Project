@@ -32,7 +32,6 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useResizeWatcher } from "@/composables/useResizeWatcher";
 
 export default {
@@ -67,6 +66,7 @@ export default {
     async ladeDaten() {
       try {
         const response = await fetch(
+            //"/questions"
           "data/questions.json"
         );
         if (!response.ok) {
