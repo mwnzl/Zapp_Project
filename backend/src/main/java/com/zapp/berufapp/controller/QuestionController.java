@@ -3,7 +3,6 @@ package com.zapp.berufapp.controller;
 import com.zapp.berufapp.entity.Question;
 import com.zapp.berufapp.service.QuestionService;
 import com.zapp.berufapp.service.ResultService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,9 +23,8 @@ public class QuestionController {
     }
 
     @PostMapping()
-    public ResponseEntity<Void> saveQuestions(@RequestBody List<Question> questions) {
-        questionService.saveQuestions(questions);
-        return ResponseEntity.ok().build();
+    public Question saveQuestions(@RequestBody Question question) {
+        return questionService.saveQuestion(question);
     }
 }
 

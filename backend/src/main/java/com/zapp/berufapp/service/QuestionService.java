@@ -1,5 +1,7 @@
 package com.zapp.berufapp.service;
 
+import com.zapp.berufapp.entity.Point;
+import com.zapp.berufapp.entity.Option;
 import com.zapp.berufapp.entity.Question;
 import com.zapp.berufapp.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
@@ -21,8 +23,18 @@ public class QuestionService {
     }
 
     @Transactional
-    public void saveQuestions(List<Question> questions) {
-        questionRepository.saveAll(questions);
+    public Question saveQuestion(Question question) {
+
+        for (Option option : question.getOptions()) {
+            option.setQuestion(question);
+
+            if (option.getPoints() != null) {
+                for (Point point : option.getPoints()) {
+                    point.setOption(option);
+                }
+            }
+        }
+        return questionRepository.save(question);
     }
 }
 
