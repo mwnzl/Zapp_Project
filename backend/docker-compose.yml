@@ -1,40 +1,33 @@
 version: '3.8'
 
 services:
-  db:
-    image: mariadb:11
-    container_name: zapp_beruf_db
+  mariadb:
+    image: mariadb:11.3
+    container_name: mariadb_dev
     environment:
-      MARIADB_DATABASE: zapp_berufdb
-      MARIADB_USER: root
-      MARIADB_PASSWORD: root
       MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: mydb
+      MARIADB_USER: appuser
+      MARIADB_PASSWORD: secret
     ports:
       - "3306:3306"
-    volumes:
-      - mariadb_data:/var/lib/mysql
     networks:
-      - app-network
+      - backend
 
   app:
-    build:
-      context: .
+    build: .
     container_name: springboot-app
     depends_on:
-      - db
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mariadb://db:3306/zapp_berufdb
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      SPRING_JPA_SHOW_SQL: "true"
+      - mariadb
     ports:
       - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/mydb
+      SPRING_DATASOURCE_USERNAME: appuser
+      SPRING_DATASOURCE_PASSWORD: secret
     networks:
-      - app-network
-
-volumes:
-  mariadb_data:
+      - backend
 
 networks:
-  app-network:
+  backend:
+    driver: bridge
