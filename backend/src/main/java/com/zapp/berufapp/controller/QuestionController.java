@@ -1,8 +1,9 @@
 package com.zapp.berufapp.controller;
 
-import com.zapp.berufapp.entity.Question;
+import com.zapp.berufapp.dto.QuestionDTO;
 import com.zapp.berufapp.service.QuestionService;
 import com.zapp.berufapp.service.ResultService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,13 +19,14 @@ public class QuestionController {
     }
 
     @GetMapping()
-    public List<Question> getQuestions() {
+    public List<QuestionDTO> getQuestions() {
         return questionService.getAllQuestions();
     }
 
     @PostMapping()
-    public Question saveQuestions(@RequestBody Question question) {
-        return questionService.saveQuestion(question);
+    public ResponseEntity<?> saveQuestions(@RequestBody QuestionDTO questionDTO) {
+        boolean saveResultBoolean = questionService.saveQuestion(questionDTO);
+        return ResponseEntity.ok(saveResultBoolean);
     }
 }
 
