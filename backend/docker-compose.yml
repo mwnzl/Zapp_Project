@@ -28,6 +28,18 @@ services:
     networks:
       - backend
 
+  frontend:
+    build:
+      context: ../ZAPP_Project
+      dockerfile: Dockerfile
+    container_name: vue-frontend
+    ports:
+      - "5173:80"
+    networks:
+      - backend
+    depends_on:
+      - app
+
 networks:
   backend:
     driver: bridge
