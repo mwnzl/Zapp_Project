@@ -67,8 +67,7 @@ const sendAnswersToBackend = async (punkte) => {
   }
   try {
     const response = await axios.post(
-        //"localhost:8080/api" +
-        "/results", data2send);
+        "/api/results", data2send);
     console.log('Antwort erfolgreich gesendet:', response.data);
   } catch (error) {
     console.error('Fehler beim Senden der Antwort:', error);

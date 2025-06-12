@@ -28,5 +28,6 @@ public class QuestionController {
         boolean saveResultBoolean = questionService.saveQuestion(questionDTO);
         return ResponseEntity.ok(saveResultBoolean);
     }
+
 }
 
