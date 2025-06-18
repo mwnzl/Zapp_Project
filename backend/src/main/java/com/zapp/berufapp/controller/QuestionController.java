@@ -29,5 +29,11 @@ public class QuestionController {
         return ResponseEntity.ok(saveResultBoolean);
     }
 
+    @DeleteMapping()
+    public ResponseEntity<?> deleteQuestions(@RequestBody QuestionDTO questionDTO) {
+        boolean deleteResultBoolean = questionService.deleteQuestion(questionDTO.getId());
+        return ResponseEntity.ok(deleteResultBoolean);
+    }
+
 }
 

@@ -71,4 +71,9 @@ public class QuestionService {
         questionRepository.save(question);
         return true;
     }
+
+    public boolean deleteQuestion(Long id) {
+        questionRepository.deleteById(id);
+        return true;
+    }
 }

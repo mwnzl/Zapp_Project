@@ -74,10 +74,6 @@ const sendAnswersToBackend = async (punkte) => {
   }
 };
 
-const handleAnswerSelection = (selectedAnswer) => {
-  sendAnswerToBackend(selectedAnswer);
-};
-
 useResizeWatcher();
 </script>
 

@@ -3,6 +3,9 @@ package com.zapp.berufapp.dto;
 import java.util.List;
 
 public class QuestionDTO {
+    private Long id;
+
+
     private String text;
     private List<OptionDTO> options;
 
@@ -11,6 +14,8 @@ public class QuestionDTO {
         this.text = text;
         this.options = options;
     }
+
+    public Long getId() {        return id;    }
 
     public String getText() {        return text;    }
     public void setText(String text) {        this.text = text;    }
