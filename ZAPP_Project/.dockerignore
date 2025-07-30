@@ -1,7 +1,4 @@
 node_modules
-target
 dist
+.git
 *.log
-*.env
-Dockerfile
-start.sh

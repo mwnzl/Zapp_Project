@@ -21,8 +21,8 @@ COPY --from=backend-builder /app/target/*.jar app.jar
 RUN mkdir -p /app/public
 COPY --from=frontend-builder /app/dist/ /app/public/
 
-# Port für Spring Boot
-EXPOSE 8080
+# Railway setzt die PORT-Umgebungsvariable
+ENV PORT=8080
 
-# Starte Spring Boot und zeige statisches Vue-Frontend
-CMD ["java", "-Dspring.web.resources.static-locations=file:/app/public/", "-jar", "app.jar"]
+# Starte Spring Boot und setze den Port dynamisch
+CMD ["java", "-Dserver.port=${PORT}", "-Dspring.web.resources.static-locations=file:/app/public/", "-jar", "app.jar"]
