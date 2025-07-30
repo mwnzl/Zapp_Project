@@ -1,0 +1,86 @@
+[
+  {
+    "text": "Hast du schon einmal mit Werkzeugen gearbeitet? (z.B. im Technikunterricht oder zu Hause)",
+    "options": [
+      { "text": "Ja, hat mir Spaß gemacht", "points": { "Industriemechaniker": 3, "Werkzeugmechaniker": 3, "Zerspannungsmechaniker": 3 } },
+      { "text": "Ja, war okay", "points": { "Industriemechaniker": 2, "Werkzeugmechaniker": 2 } },
+      { "text": "Nein, aber ich stelle es mir interessant vor", "points": { "Industriemechaniker": 1 } },
+      { "text": "Nein, interessiert mich nicht so", "points": {} }
+    ]
+  },
+  {
+    "text": "Hast du schon einmal elektrische Geräte repariert oder zusammengebaut? (z.B. im Haushalt, Fahrradlicht, Modellbau)",
+    "options": [
+      { "text": "Ja, öfter", "points": { "Elektroniker": 3 } },
+      { "text": "Ja, einmal oder zweimal", "points": { "Elektroniker": 2 } },
+      { "text": "Nein, aber ich würde es gerne mal versuchen", "points": { "Elektroniker": 1 } },
+      { "text": "Nein, interessiert mich nicht", "points": {} }
+    ]
+  },
+  {
+    "text": "Hast du in der Schule oder in einem Praktikum schon mal mit Maschinen gearbeitet? (z.B. Fräsen, Bohren, Drehen)",
+    "options": [
+      { "text": "Ja, hat mir Spaß gemacht", "points": { "Zerspannungsmechaniker": 3, "Industriemechaniker": 3 } },
+      { "text": "Ja, aber war nicht so meins", "points": {} },
+      { "text": "Nein, aber ich kann mir das gut vorstellen", "points": { "Zerspannungsmechaniker": 2 } }
+    ]
+  },
+  {
+    "text": "Hast du schon Erfahrungen im Labor oder bei Experimenten gemacht? (z.B. Werkstoffprüfung, Chemieunterricht)",
+    "options": [
+      { "text": "Ja, und ich fand es spannend", "points": { "Werkstoffpruefer": 3 } },
+      { "text": "Ja, war in Ordnung", "points": { "Werkstoffpruefer": 2 } },
+      { "text": "Nein, aber ich bin interessiert", "points": { "Werkstoffpruefer": 1 } }
+    ]
+  },
+  {
+    "text": "Wie findest du das Arbeiten mit Metallen (z.B. feilen, sägen, biegen)?",
+    "options": [
+      { "text": "Macht mir Spaß", "points": { "Werkzeugmechaniker": 3, "Zerspannungsmechaniker": 3 } },
+      { "text": "Ist in Ordnung", "points": { "Industriemechaniker": 2 } },
+      { "text": "Eher langweilig", "points": {} }
+    ]
+  },
+  {
+    "text": "Hast du schon einmal etwas selbst zusammengebaut oder gebastelt? (z.B. Möbel aufbauen, Modellbau, Lego-Technik)",
+    "options": [
+      { "text": "Ja, und ich mache das gerne", "points": { "Industriemechaniker": 3, "Elektroniker": 3, "Werkzeugmechaniker": 3 } },
+      { "text": "Ja, aber eher selten", "points": { "Industriemechaniker": 2 } },
+      { "text": "Nein", "points": {} }
+    ]
+  },
+  {
+    "text": "In einem Praktikum oder Hobby: Was hat dir am meisten gefallen?",
+    "options": [
+      { "text": "Reparieren", "points": { "Industriemechaniker": 3, "Elektroniker": 3 } },
+      { "text": "Überprüfen und testen", "points": { "Werkstoffpruefer": 3 } },
+      { "text": "Genaues Arbeiten an Maschinen", "points": { "Zerspannungsmechaniker": 3, "Werkzeugmechaniker": 3 } },
+      { "text": "Abläufe steuern", "points": { "Verfahrenstechnologe": 3 } }
+    ]
+  },
+  {
+    "text": "Kannst du dir vorstellen, Maschinen zu bedienen oder zu steuern?",
+    "options": [
+      { "text": "Ja, finde ich spannend", "points": { "Verfahrenstechnologe": 3, "Industriemechaniker": 3 } },
+      { "text": "Ja, aber nur einfache Maschinen", "points": { "Industriemechaniker": 2 } },
+      { "text": "Nein, lieber etwas anderes", "points": {} }
+    ]
+  },
+  {
+    "text": "Hast du schon mal bei einer Qualitätskontrolle oder ähnlichem mitgemacht? (z.B. Sachen kontrolliert, ob alles richtig ist)",
+    "options": [
+      { "text": "Ja, und ich fand das interessant", "points": { "Werkstoffpruefer": 3 } },
+      { "text": "Ja, aber eher langweilig", "points": {} },
+      { "text": "Nein, aber ich finde das spannend", "points": { "Werkstoffpruefer": 2 } }
+    ]
+  },
+  {
+    "text": "Wobei fühlst du dich am sichersten?",
+    "options": [
+      { "text": "Wenn ich Dinge repariere oder zusammenbaue", "points": { "Industriemechaniker": 3, "Werkzeugmechaniker": 3 } },
+      { "text": "Wenn ich technische Geräte anschaue oder repariere", "points": { "Elektroniker": 3 } },
+      { "text": "Wenn ich sehr genau messe oder prüfe", "points": { "Werkstoffpruefer": 3, "Zerspannungsmechaniker": 3 } },
+      { "text": "Wenn ich Abläufe überwache", "points": { "Verfahrenstechnologe": 3 } }
+    ]
+  }
+]

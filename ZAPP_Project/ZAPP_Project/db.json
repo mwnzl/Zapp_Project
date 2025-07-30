@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "text": "Was motiviert Sie am meisten bei der Arbeit?",
+    "answers": [
+      {
+        "id": 1,
+        "text": "Anerkennung für gute Arbeit",
+        "points": 3
+      },
+      {
+        "id": 2,
+        "text": "Finanzielle Belohnungen",
+        "points": 2
+      },
+      {
+        "id": 3,
+        "text": "Teamarbeit",
+        "points": 1
+      }
+    ]
+  }
+]
