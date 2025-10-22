@@ -1,0 +1,12 @@
+<questions>
+    <question id="1">
+        <text>Was ist Java?</text>
+        <option correct="true">Programmiersprache</option>
+        <option correct="false">Obstsorte</option>
+    </question>
+    <question id="2">
+        <text>Was ist Spring Boot?</text>
+        <option correct="true">Framework</option>
+        <option correct="false">Musikgenre</option>
+    </question>
+</questions>

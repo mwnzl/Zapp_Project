@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      fragen: null, 
+      fragen: null,
       currentStep: 0,
       selected: null,
       fehlermeldung: '',
@@ -65,11 +65,9 @@ export default {
   methods: {
     async ladeDaten() {
       try {
-        const response = await fetch(
-            "/api/questions"
-        );
+        const response = await fetch("/data/fragen.json"); // Pfad zur JSON-Datei
         if (!response.ok) {
-          throw new Error('Fehler beim Abrufen der Daten vom Backend');
+          throw new Error("Fehler beim Laden der JSON-Datei");
         }
         const data = await response.json();
         this.fragen = data;
@@ -87,7 +85,7 @@ export default {
           }
         }
 
-        this.selected = null; 
+        this.selected = null;
         if (this.currentStep < this.fragen.length - 1) {
           this.currentStep++;
         } else {
@@ -96,7 +94,7 @@ export default {
             query: {
               punkte: JSON.stringify(this.berufPunkte)
             }
-          }); 
+          });
         }
       } else {
         alert("Bitte eine Antwort auswählen!");
@@ -113,7 +111,7 @@ export default {
 <style scoped>
 .quiz-page {
   font-family: 'Roboto', sans-serif;
-  background: #f0f0f0; 
+  background: #f0f0f0;
   text-align: center;
   min-height: 100vh;
   display: flex;

@@ -1,0 +1,92 @@
+[
+  {
+    "text": "Welche Art von Aufgaben findest du am spannendsten?",
+    "options": [
+      { "text": "Präzise Montage von Bauteilen", "points": { "Industriemechaniker": 2, "Werkzeugmechaniker": 1 } },
+      { "text": "Entwicklung und Programmierung von Schaltungen", "points": { "Elektroniker": 2 } },
+      { "text": "Überwachung und Steuerung chemischer Prozesse", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Herstellung von Werkstücken durch Zerspanung", "points": { "Zerspannungsmechaniker": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Werkzeuge interessieren dich am meisten?",
+    "options": [
+      { "text": "Drehmaschine", "points": { "Zerspannungsmechaniker": 2, "Werkzeugmechaniker": 1 } },
+      { "text": "Multimeter", "points": { "Elektroniker": 2 } },
+      { "text": "Analysegeräte", "points": { "Verfahrenstechnologe": 2, "Werkstoffpruefer": 1 } },
+      { "text": "Messschieber", "points": { "Industriemechaniker": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Materialien findest du am interessantesten?",
+    "options": [
+      { "text": "Metalle", "points": { "Industriemechaniker": 1, "Zerspannungsmechaniker": 1, "Werkzeugmechaniker": 1 } },
+      { "text": "Kunststoffe", "points": { "Verfahrenstechnologe": 1 } },
+      { "text": "Halbleiter", "points": { "Elektroniker": 1 } },
+      { "text": "Verbundwerkstoffe", "points": { "Werkstoffpruefer": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Art von Dokumentation liegt dir am meisten?",
+    "options": [
+      { "text": "Technische Zeichnungen", "points": { "Industriemechaniker": 2, "Werkzeugmechaniker": 2 } },
+      { "text": "Schaltpläne", "points": { "Elektroniker": 2 } },
+      { "text": "Prozessprotokolle", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Prüfberichte", "points": { "Werkstoffpruefer": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Art von Problemlösung reizt dich am meisten?",
+    "options": [
+      { "text": "Mechanische Fehleranalyse", "points": { "Industriemechaniker": 2 } },
+      { "text": "Elektrische Fehlersuche", "points": { "Elektroniker": 2 } },
+      { "text": "Chemische Prozessoptimierung", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Werkstoffprüfung und -auswahl", "points": { "Werkstoffpruefer": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Art von Präzision ist dir am wichtigsten?",
+    "options": [
+      { "text": "Passgenauigkeit von Bauteilen", "points": { "Industriemechaniker": 2, "Werkzeugmechaniker": 2 } },
+      { "text": "Genauigkeit von Messwerten", "points": { "Elektroniker": 1, "Werkstoffpruefer": 1 } },
+      { "text": "Konstanz von Prozessparametern", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Oberflächengüte von Werkstücken", "points": { "Zerspannungsmechaniker": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Art von Verantwortung möchtest du übernehmen?",
+    "options": [
+      { "text": "Wartung und Reparatur von Maschinen", "points": { "Industriemechaniker": 2 } },
+      { "text": "Sicherheit elektrischer Anlagen", "points": { "Elektroniker": 2 } },
+      { "text": "Umweltverträglichkeit von Prozessen", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Qualitätssicherung von Werkstoffen", "points": { "Werkstoffpruefer": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Art von Weiterbildung findest du am attraktivsten?",
+    "options": [
+      { "text": "Hydraulik und Pneumatik", "points": { "Industriemechaniker": 2 } },
+      { "text": "Automatisierungstechnik", "points": { "Elektroniker": 2 } },
+      { "text": "Reaktionstechnik", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Werkstoffkunde", "points": { "Werkstoffpruefer": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Art von Arbeitsumgebung bevorzugst du?",
+    "options": [
+      { "text": "Werkshalle mit Maschinen", "points": { "Industriemechaniker": 1, "Zerspannungsmechaniker": 1, "Werkzeugmechaniker": 1 } },
+      { "text": "Labor mit Messgeräten", "points": { "Elektroniker": 1, "Werkstoffpruefer": 1 } },
+      { "text": "Produktionsanlage mit Steuerungstechnik", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Präzisionswerkstatt", "points": { "Werkzeugmechaniker": 2 } }
+    ]
+  },
+  {
+    "text": "Welche Art von Herausforderungen suchst du?",
+    "options": [
+      { "text": "Instandhaltung komplexer Anlagen", "points": { "Industriemechaniker": 2 } },
+      { "text": "Entwicklung innovativer Produkte", "points": { "Elektroniker": 2 } },
+      { "text": "Optimierung von Produktionsprozessen", "points": { "Verfahrenstechnologe": 2 } },
+      { "text": "Sicherstellung höchster Qualitätsstandards", "points": { "Werkstoffpruefer": 2 } }
+    ]
+  }
+]

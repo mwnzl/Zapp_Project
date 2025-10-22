@@ -5,15 +5,20 @@
       <main>
         <h2>Dein Ergebnis</h2>
         <div class="result-container">
-          <div class="result-left">
+          <div class="result-item">
             <h3>Beruf mit der meisten Zustimmung</h3>
             <p>{{ topMatch }} ({{ topMatchPercentage }}%)</p>
             <router-link :to="`/beruf/${topMatch.toLowerCase().replace(/\s+/g, '')}`" class="zapp-button">Mehr über {{ topMatch }} erfahren</router-link>
           </div>
-          <div class="result-right">
+          <div class="result-item">
             <h3>Beruf mit der zweitmeisten Zustimmung</h3>
             <p>{{ secondMatch }} ({{ secondMatchPercentage }}%)</p>
             <router-link :to="`/beruf/${secondMatch.toLowerCase().replace(/\s+/g, '')}`" class="zapp-button">Mehr über {{ secondMatch }} erfahren</router-link>
+          </div>
+          <div class="result-item">
+            <h3>Beruf mit der drittmeisten Zustimmung</h3>
+            <p>{{ thirdMatch }} ({{ thirdMatchPercentage }}%)</p>
+            <router-link :to="`/beruf/${thirdMatch.toLowerCase().replace(/\s+/g, '')}`" class="zapp-button">Mehr über {{ thirdMatch }} erfahren</router-link>
           </div>
         </div>
         <p>Das klingt garnicht nach dir? Wie wäre es mit anderen Berufen:</p>
@@ -38,6 +43,9 @@ const topMatchPercentage = ref(0);
 const secondMatch = ref("");
 const secondMatchPoints = ref(0);
 const secondMatchPercentage = ref(0);
+const thirdMatch = ref("");
+const thirdMatchPoints = ref(0);
+const thirdMatchPercentage = ref(0);
 
 onMounted(() => {
   const punkte = JSON.parse(route.query.punkte || '{}');
@@ -54,6 +62,12 @@ onMounted(() => {
     secondMatch.value = sortedBerufe[1][0];
     secondMatchPoints.value = sortedBerufe[1][1];
     secondMatchPercentage.value = ((sortedBerufe[1][1] / totalPoints) * 100).toFixed(2);
+  }
+
+  if (sortedBerufe.length > 2) {
+    thirdMatch.value = sortedBerufe[2][0];
+    thirdMatchPoints.value = sortedBerufe[2][1];
+    thirdMatchPercentage.value = ((sortedBerufe[2][1] / totalPoints) * 100).toFixed(2);
   }
 
   console.log(punkte)
@@ -94,13 +108,14 @@ useResizeWatcher();
 
 .result-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-around; /* Distribute items evenly */
   margin: 20px 0;
 }
 
-.result-left, .result-right {
-  flex: 1;
-  margin: 0 10px;
+.result-item {
+  flex: 1 1 30%; /* Each item takes up about 30% of the container width */
+  margin: 10px;
   padding: 20px;
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -109,6 +124,7 @@ useResizeWatcher();
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 250px; /* Minimum width for each item */
 }
 
 .zapp-button {
@@ -136,6 +152,12 @@ useResizeWatcher();
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+  .result-item {
+    flex-basis: 45%; /* Two items per row on medium screens */
+  }
+}
+
 @media (max-width: 480px) {
   .page {
     padding: 10px;
@@ -152,7 +174,7 @@ useResizeWatcher();
     align-items: center;
   }
 
-  .result-left, .result-right {
+  .result-item {
     width: 100%;
     margin: 10px 0;
     padding: 15px;

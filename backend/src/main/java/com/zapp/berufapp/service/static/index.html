@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Beruf Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 20px; }
+        .option { margin-left: 20px; }
+        button { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Beruf Quiz</h1>
+    <div id="quiz"></div>
+    <button onclick="calculateScore()">Ergebnis berechnen</button>
+    <h2 id="result"></h2>
+
+    <script>
+        let questions = [];
+
+        // 1. Fragen vom Backend holen
+        fetch('/api/questions')
+            .then(response => response.json())
+            .then(data => {
+                questions = data;
+                displayQuiz();
+            });
+
+        // 2. Quiz im HTML anzeigen
+        function displayQuiz() {
+            const quizDiv = document.getElementById('quiz');
+            quizDiv.innerHTML = '';
+
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `<b>${index + 1}. ${q.text}</b>`;
+
+                q.options.forEach((opt, optIndex) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.classList.add('option');
+                    optionDiv.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}" id="q${index}o${optIndex}">
+                        <label for="q${index}o${optIndex}">${opt.text}</label>
+                    `;
+                    questionDiv.appendChild(optionDiv);
+                });
+
+                quizDiv.appendChild(questionDiv);
+            });
+        }
+
+        // 3. Punkte berechnen
+        function calculateScore() {
+            const totalPoints = {};
+
+            questions.forEach((q, qIndex) => {
+                const selected = document.querySelector(`input[name="q${qIndex}"]:checked`);
+                if (selected) {
+                    const option = q.options[selected.value];
+                    for (const [profession, score] of Object.entries(option.points)) {
+                        totalPoints[profession] = (totalPoints[profession] || 0) + score;
+                    }
+                }
+            });
+
+            // Besten Beruf ermitteln
+            let bestProfession = null;
+            let maxScore = -Infinity;
+            for (const [profession, score] of Object.entries(totalPoints)) {
+                if (score > maxScore) {
+                    maxScore = score;
+                    bestProfession = profession;
+                }
+            }
+
+            document.getElementById('result').innerText =
+                bestProfession ? `Passender Beruf: ${bestProfession} (${maxScore} Punkte)` : 'Keine Antwort ausgewählt!';
+        }
+    </script>
+</body>
+</html>
